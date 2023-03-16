@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context=".MainActivity">
+
+
+    <androidx.appcompat.widget.SearchView
+        android:id="@+id/News_searchView"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:layout_marginTop="8dp"
+        android:background="#DBF3F0"
+        android:hint="@string/search_news"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="start"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/News_searchView">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="4dp"
+            android:text="My Saved"
+            android:textColor="@color/black"
+            android:textSize="12dp"/>
+
+        <ImageView
+            android:id="@+id/my_favorite"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            app:srcCompat="@drawable/ic_baseline_favorite_24" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="-20dp"
+            android:text="Sort By"
+            android:textColor="@color/black"
+            android:textSize="12dp">
+
+        </TextView>
+
+
+        <RadioButton
+            android:id="@+id/relevantRadio"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="-50dp"
+            android:scaleX="0.5"
+            android:scaleY="0.5"
+            android:text=" Relevant"
+            android:textSize="20dp">
+
+        </RadioButton>
+
+        <RadioButton
+            android:id="@+id/popularRadio"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="-55dp"
+            android:checked="true"
+            android:scaleX="0.5"
+            android:scaleY="0.5"
+            android:text=" Popular"
+            android:textSize="20dp"></RadioButton>
+
+        <RadioButton
+            android:id="@+id/recentRadio"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="-20dp"
+            android:scaleX="0.5"
+            android:scaleY="0.5"
+            android:text="published"
+            android:textSize="20dp"></RadioButton>
+    </RadioGroup>
+
+<!--    <androidx.cardview.widget.CardView-->
+<!--        android:id="@+id/mycardview"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="200dp"-->
+<!--        android:layout_marginTop="8dp"-->
+<!--        app:cardCornerRadius="5dp"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintHorizontal_bias="0.498"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@id/radioGroup">-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/title_top_"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:textColor="@color/red"-->
+<!--            android:textSize="23sp"-->
+<!--            android:layout_height="30dp"-->
+<!--            android:layout_gravity="bottom" />-->
+
+<!--        <ImageView-->
+<!--            android:id="@+id/news_image_top"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:background="@mipmap/ic_launcher_round"-->
+<!--            android:scaleType="centerCrop" />-->
+
+<!--    </androidx.cardview.widget.CardView>-->
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/newRecyclerview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:layout_constraintTop_toBottomOf="@id/radioGroup"
+        tools:listitem="@layout/news_item" />
+
+    <ProgressBar
+        android:id="@+id/newsprogressBar"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/News_searchView"
+        app:layout_constraintVertical_bias="0.39"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/rcvMsg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/newsprogressBar"
+        app:layout_constraintVertical_bias="0.111" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        app:layout_constraintTop_toBottomOf="@id/radioGroup"
+        tools:layout_editor_absoluteX="147dp" />
+
+<!--    <ImageView-->
+<!--        android:id="@+id/my_favorite"-->
+<!--        android:layout_width="30dp"-->
+<!--        android:layout_height="30dp"-->
+<!--        android:layout_marginTop="68dp"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintHorizontal_bias="0.505"-->
+<!--        app:layout_constraintStart_toEndOf="@+id/radioGroup"-->
+<!--        app:layout_constraintTop_toTopOf="@+id/News_searchView"-->
+<!--        app:srcCompat="@drawable/ic_baseline_favorite_24" />-->
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

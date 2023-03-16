@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">MyNews</string>
+    <string name="search_news">search news</string>
+    <string name="content">You are trying to request results too far in the past. Your plan permits you to request articles as far back as 2023-01-31, but you have requested 2023-01-21. You may need to upgrade to a paid plan.You are trying to request results too far in the past. Your plan permits you to request articles as far back as 2023-01-31, but you have requested 2023-01-21. You may need to upgrade to a paid plan.You are trying to request results too far in the past. Your plan permits you to request articles as far back as 2023-01-31, but you have requested 2023-01-21. You may need to upgrade to a paid plan.</string>
+</resources>
